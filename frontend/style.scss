@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: darkseagreen;
+    h1{
+        text-align: center;
+        color: white;
+    }
+}
+main{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    section{
+        width: 45%;
+        border: 2px solid darkseagreen;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(143, 188, 143, 0.189);
+        h2{
+            margin: 10px;
+            color: rgb(71, 97, 71);
+        }
+        p{
+            margin: 3px;
+        }
+        img{
+            margin: 5px;
+            height: 200px;
+            border-radius: 3px;
+        }
+    }
+}
+
+.logged-in{
+    display: none;
+}
