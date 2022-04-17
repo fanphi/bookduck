@@ -38,20 +38,25 @@ const checkUser = async () => {
             let review = document.createElement("p");
             let username = document.createElement("p");
             let email = document.createElement("p");
+            let genres = document.createElement("p");
+
             title.innerText = "Title: " + book.attributes.title;
             author.innerText = "Author: " + book.attributes.author;
             pages.innerText = "Number of pages: " + book.attributes.pages;
             review.innerText = "Review: " + book.attributes.review + "/10";
             username.innerText = "Username: " + book.attributes.users_permissions_user.data.attributes.username;
             email.innerText = "Email: " + book.attributes.users_permissions_user.data.attributes.email;
-    
+            genres.innerText = "Genre: " + book.attributes.genre.data.attributes.genre;
             let cover = document.createElement("img");
+           profileBooks.append(cover,title,author,pages,review, genres, username, email);
+           
+          
+  
             if(book.attributes.cover.data) {
             cover.src = "http://localhost:1337" + book.attributes.cover.data.attributes.url;
             }
     
     
-            profileBooks.append(cover,title,author,pages, review, username, email);
         }
         });
     }
@@ -77,14 +82,17 @@ const checkUser = async () => {
             published.innerText = "Publishing date: " + audio.attributes.published;
             username.innerText = "Username: " + audio.attributes.users_permissions_user.data.attributes.username;
             email.innerText = "Email: " + audio.attributes.users_permissions_user.data.attributes.email;
-    
+            let genres = document.createElement("p");
+            genres.innerText = "Genre: " + audio.attributes.genre.data.attributes.genre;
             let cover = document.createElement("img");
+            profileBooks.append(cover,title,minutes, review, published,genres, username, email);
+       
             if(audio.attributes.cover.data) {
             cover.src = "http://localhost:1337" + audio.attributes.cover.data.attributes.url;
             }
     
     
-            profileBooks.append(cover,title,minutes, review, published, username, email);
+           
         }
         });
     }
