@@ -38,7 +38,7 @@ const checkUser = async () => {
             let review = document.createElement("p");
             let username = document.createElement("p");
             let email = document.createElement("p");
-            let genres = document.createElement("p");
+            let genre = document.createElement("p");
 
             title.innerText = "Title: " + book.attributes.title;
             author.innerText = "Author: " + book.attributes.author;
@@ -46,9 +46,12 @@ const checkUser = async () => {
             review.innerText = "Review: " + book.attributes.review + "/10";
             username.innerText = "Username: " + book.attributes.users_permissions_user.data.attributes.username;
             email.innerText = "Email: " + book.attributes.users_permissions_user.data.attributes.email;
-            genres.innerText = "Genre: " + book.attributes.genre.data.attributes.genre;
+            genre.innerText = "Genre: " ;
             let cover = document.createElement("img");
-           profileBooks.append(cover,title,author,pages,review, genres, username, email);
+            book.attributes.genres.data.forEach((x)=>{
+                genre.innerText +=  x.attributes.genre + " ";
+            })
+           profileBooks.append(cover,title,author,pages,review, genre, username, email);
            
           
   
@@ -82,10 +85,14 @@ const checkUser = async () => {
             published.innerText = "Publishing date: " + audio.attributes.published;
             username.innerText = "Username: " + audio.attributes.users_permissions_user.data.attributes.username;
             email.innerText = "Email: " + audio.attributes.users_permissions_user.data.attributes.email;
-            let genres = document.createElement("p");
-            genres.innerText = "Genre: " + audio.attributes.genre.data.attributes.genre;
+            let genre = document.createElement("p");
+            genre.innerText = "Genre: " ;
             let cover = document.createElement("img");
-            profileBooks.append(cover,title,minutes, review, published,genres, username, email);
+          
+            audio.attributes.genres.data.forEach((x)=>{
+                genre.innerText +=  x.attributes.genre + " ";
+            })
+            profileBooks.append(cover,title,minutes, review, published,genre, username, email);
        
             if(audio.attributes.cover.data) {
             cover.src = "http://localhost:1337" + audio.attributes.cover.data.attributes.url;

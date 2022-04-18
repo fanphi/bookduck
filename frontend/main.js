@@ -14,19 +14,23 @@ let renderBooks = async () => {
         let review = document.createElement("p");
         let username = document.createElement("p");
         let email = document.createElement("p");
-        let genres = document.createElement("p");
+        let genre = document.createElement("p");
         title.innerText = "Title: " + book.attributes.title;
         author.innerText = "Author: " + book.attributes.author;
         pages.innerText = "Number of pages: " + book.attributes.pages;
         review.innerText = "Review: " + book.attributes.review + "/10";
         username.innerText = "Username: " + book.attributes.users_permissions_user.data.attributes.username;
         email.innerText = "Email: " + book.attributes.users_permissions_user.data.attributes.email;
-        genres.innerText = "Genre: " + book.attributes.genre.data.attributes.genre;
+        genre.innerText = "Genre: ";
         let cover = document.createElement("img");
-      
+        console.log(book.attributes.genres.data)
+        book.attributes.genres.data.forEach((x)=>{
+            genre.innerText +=  x.attributes.genre + " ";
+        })
+        
        
         
-         bookList.append(cover,title,author,pages, review, genres, username, email);
+         bookList.append(cover,title,author,pages, review, genre, username, email);
        
         if(book.attributes.cover.data) {
         cover.src = "http://localhost:1337" + book.attributes.cover.data.attributes.url;
@@ -58,14 +62,18 @@ audio.forEach(audio => {
         email.innerText = "Email: " + audio.attributes.users_permissions_user.data.attributes.email;
 
         let cover = document.createElement("img");
-        let genres = document.createElement("p");
-        genres.innerText = "Genre: " + audio.attributes.genre.data.attributes.genre;
+        let genre = document.createElement("p");
+        genre.innerText = "Genre: " ;
+        audio.attributes.genres.data.forEach((x)=>{
+            genre.innerText +=  x.attributes.genre + " ";
+        })
+        
       
 
         if(audio.attributes.cover.data) {
         cover.src = "http://localhost:1337" + audio.attributes.cover.data.attributes.url;
         }
-        audioList.append(cover,title,minutes, review, published, genres, username, email);
+        audioList.append(cover,title,minutes, review, published, genre, username, email);
 
       
     });

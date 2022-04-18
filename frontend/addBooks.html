@@ -8,10 +8,81 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body><header>
+<body>
+    <header>
     <h1>Welcome to BookDuck!</h1>
     </header>
+    <main>
+       <section id="book-container">
+        <h2>Lägg till en produkt</h2>
+        <div>
+            <label for="bookTitle">Titel</label>
+            <input type="text" id="bookTitle">
+        </div>
+        <div>
+            <label for="bookAuthor">Författare</label>
+            <input type="text" id="bookAuthor">
+        </div>
+        <div>
+            <label for="pages">Antal sidor</label>
+            <input type="number" id="pages">
+        </div>
+        <div>
+            <label for="review">Betyg</label>
+            <input type="number" id="review">
+        </div>
+                
+        <div>
+            <label for="bookCover">Bild:</label>
+            <input type="file" id="bookCover">
+        </div>
+        <div>
+        
+            <label for="genre1">Deckare</label>
+            <input type="checkbox" id="genre1" class="genres" value="1">
+            <label for="genre2">Samtidsromaner</label>
+            <input type="checkbox" id="genre2" class="genres" value="2">
+            <label for="genre3">Samhälle & Debatt</label>
+            <input type="checkbox" id="genre3" class="genres" value="3">
+        </div>
+        <button onclick="addBook()">Lägg till en bok</button>
+       </section>
 
+    <section id="audio-container">
+        <h2>Lägg till en ljudbok</h2>
+        <div>
+            <label for="audioTitle">Titel</label>
+            <input type="text" id="audioTitle">
+        </div>
+        <div>
+            <label for="published">Publicerad:</label>
+            <input type="date" id="published">
+        </div>
+        <div>
+            <label for="minutes">Minuter:</label>
+            <input type="number" id="minutes">
+        </div>
+        <div>
+            <label for="audioReview">Betyg</label>
+            <input type="number" id="audioReview">
+        </div>
+                
+        <div>
+            <label for="audioCover">Bild:</label>
+            <input type="file" id="audioCover">
+        </div>
+        <div>
+        
+            <label for="audioGenre1">Deckare</label>
+            <input type="checkbox" id="audioGenre1" class="audioGenre" value="1">
+            <label for="audioGenre2">Samtidsromaner</label>
+            <input type="checkbox" id="audioGenre2" class="audioGenre" value="2">
+            <label for="audioGenre3">Samhälle & Debatt</label>
+            <input type="checkbox" id="audioGenre3" class="audioGenre" value="3">
+        </div>
+        <button onclick="addAudio()">Lägg till en ljudbok</button>
+    </section>
+</main>
    <script src="addBooks.js"></script>
 </body>
 </html>

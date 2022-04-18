@@ -17,15 +17,15 @@
     },
     "audio": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::audio.audio",
-      "mappedBy": "genre"
+      "mappedBy": "genres"
     },
     "books": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::book.book",
-      "mappedBy": "genre"
+      "mappedBy": "genres"
     }
   }
 }

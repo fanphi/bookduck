@@ -41,9 +41,9 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "books"
     },
-    "genre": {
+    "genres": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::genre.genre",
       "inversedBy": "books"
     }

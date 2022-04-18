@@ -43,9 +43,9 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "audio"
     },
-    "genre": {
+    "genres": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::genre.genre",
       "inversedBy": "audio"
     }
