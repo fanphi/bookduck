@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +10,21 @@
 </head>
 <body>
     <header>
-    <h1>Welcome to BookDuck!</h1>
+    <h1>Welcome to BookDuck</h1>
+    <nav  class="logged-in" >
+      <div  >
+      <div><a href="profil.html">Min Profilsida</a>
+      <a href="addBooks.html">Lägg till böcker</a></div> 
+        <div>
+           <p class="login-para"></p>
+       
+      
+       <button id="logout">Log out</button>
+    </div>
+    </div>
+    </nav>
     </header>
-    <a href="addBooks.html">Add books</a>
+   
     <div class="login">
         <label for="username">Username:</label>
     <input type="text" name="username" id="username">
@@ -29,9 +41,7 @@
     <button onclick="register()">Register & login</button>
     </div>
     <div class="logged-in">
-        <p class="login-para"></p>
-        <button id="logout">Log out</button>
-        <button id="profile">Go to profile</button>
+     
     </div>
     <main>
         <section id="books">

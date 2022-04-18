@@ -8,8 +8,49 @@ header {
 }
 
 header h1 {
+  padding-top: 3%;
   text-align: center;
   color: white;
+}
+
+header nav div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header nav div a {
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+}
+
+header nav div a:hover {
+  color: #e0dddd;
+}
+
+header nav div p {
+  color: white;
+  display: inline;
+  margin: 10px;
+}
+
+header nav div button {
+  border: none;
+  margin: 10px;
+  padding: 3px 7px;
+  border-radius: 5px;
+}
+
+header nav div button:hover {
+  background-color: #e0dddd;
 }
 
 main {

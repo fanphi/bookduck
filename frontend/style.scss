@@ -5,8 +5,46 @@
 header{
     background-color: darkseagreen;
     h1{
+       padding-top: 3%;
         text-align: center;
         color: white;
+    }
+    nav{
+    //   display: flex;
+    //   flex-direction: row;
+    //   justify-content: space-evenly;
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+   
+        a{
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+        }
+        a:hover{
+            color: rgb(224, 221, 221);
+        }
+    
+          
+            p{
+                color: white;
+                display: inline;
+                margin: 10px;
+            }
+            button{
+               border: none;
+                margin: 10px;
+                padding: 3px 7px;
+                border-radius: 5px;
+            }
+            button:hover{
+                background-color:rgb(224, 221, 221) ;
+            }
+        }
+        
+     
     }
 }
 main{
@@ -41,3 +79,4 @@ main{
 .logged-in{
     display: none;
 }
+

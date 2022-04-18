@@ -16,7 +16,7 @@ const checkUser = async () => {
     console.log(response);
     let createdAt = response.data.createdAt;
     let id = response.data.id;
-    // createdAt.toISOString();
+ 
    console.log( createdAt.slice(0,10));
     
     loggedInPara.innerText = "Welcome " + response.data.username;

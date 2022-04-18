@@ -96,3 +96,31 @@ let addAudio = async () => {
         }
         )}
         )}
+   
+        let data = sessionStorage.getItem("token");
+        let loggedIn = document.querySelector(".logged-in");
+        let loggedInPara = document.querySelector(".login-para");
+  
+        
+        const checkUser = async () => {
+            let response = await axios.get("http://localhost:1337/api/users/me",
+            {
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.getItem("token")}`
+                }
+            })
+            loggedInPara.innerText = "Välkommen " + response.data.username;
+
+            if(data != null){
+            loggedIn.style.display = "block";
+            }
+        }
+        let logoutBtn = document.querySelector("#logout");
+
+            logoutBtn.addEventListener("click", ()=>{
+                sessionStorage.clear();
+                window.location.href = "./index.html"  
+            })
+
+
+        checkUser();

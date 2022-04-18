@@ -138,14 +138,7 @@ let loggedIn = document.querySelector(".logged-in");
 let loggedInPara = document.querySelector(".login-para");
 
 
-// loggedInPara.innerText = "Welcome ";
 
-// if(data != null){
-// loginContainer.style.display = "none";
-// loggedIn.style.display = "block";
-// checkMe()
-// }
-// let user = "test";
 const checkMe = async () => {
     let response = await axios.get("http://localhost:1337/api/users/me",
     {
@@ -156,7 +149,7 @@ const checkMe = async () => {
     // user = response.data.username;
   
     console.log(response.data.username);
-    loggedInPara.innerText = "Welcome " + response.data.username;
+    loggedInPara.innerText = "Välkommen " + response.data.username;
 
 if(data != null){
 loginContainer.style.display = "none";
@@ -164,19 +157,17 @@ loggedIn.style.display = "block";
 }
 }
 
-let profileBtn = document.querySelector("#profile");
+// let profileBtn = document.querySelector("#profile");
 
-profileBtn.addEventListener("click",()=>{
-    if (data != null){
-        window.location.href = "./profil.html"
+// profileBtn.addEventListener("click",()=>{
+//     if (data != null){
+//         window.location.href = "./profil.html"
    
-    }
+//     }
   
-})
+// })
 
 
 checkMe()
-// console.log(user);
-// console.log(checkMe());
 renderBooks()
 renderAudio()
