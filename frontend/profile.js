@@ -5,6 +5,9 @@ let loggedIn = document.querySelector(".logged-in");
 let loggedInPara = document.querySelector(".login-para");
 let userContainer = document.querySelector("#user-info");
 let profileBooks = document.querySelector("#profile-books");
+// let header = document.createElement("h2");
+// header.innerText = "Mina ljudböcker";
+let profileAudio = document.querySelector("#profile-audio");
 
 const checkUser = async () => {
     let response = await axios.get("http://localhost:1337/api/users/me",
@@ -19,11 +22,11 @@ const checkUser = async () => {
  
    console.log( createdAt.slice(0,10));
     
-    loggedInPara.innerText = "Welcome " + response.data.username;
-    userContainer.innerHTML = `<h2>My Info</h2><p>Username: ${response.data.username} <br>
-    Email: ${response.data.email}<br>
-    User ID: ${id}<br>
-    Created: ${createdAt.slice(0,10)}</p><br>`
+    loggedInPara.innerText = "Välkommen " + response.data.username;
+    userContainer.innerHTML = `<h2>Användarinfo</h2><p>Användarnamn: ${response.data.username} <br>
+   E-post: ${response.data.email}<br>
+    Användar ID: ${id}<br>
+    Datum för registrering: ${createdAt.slice(0,10)}</p><br>`
 
     let renderBooks = async () => {
         let bookResponse = await axios.get("http://localhost:1337/api/books?populate=*");
@@ -39,20 +42,22 @@ const checkUser = async () => {
             let username = document.createElement("p");
             let email = document.createElement("p");
             let genre = document.createElement("p");
+            let listItem = document.createElement("li");
+            title.classList.add("heading");
 
-            title.innerText = "Title: " + book.attributes.title;
-            author.innerText = "Author: " + book.attributes.author;
-            pages.innerText = "Number of pages: " + book.attributes.pages;
-            review.innerText = "Review: " + book.attributes.review + "/10";
-            username.innerText = "Username: " + book.attributes.users_permissions_user.data.attributes.username;
-            email.innerText = "Email: " + book.attributes.users_permissions_user.data.attributes.email;
+            title.innerText = "Titel: " + book.attributes.title;
+            author.innerText = "Författare: " + book.attributes.author;
+            pages.innerText = "Antal sidor: " + book.attributes.pages;
+            review.innerText = "Betyg: " + book.attributes.review + "/10";
+            username.innerText = "Användarnamn: " + book.attributes.users_permissions_user.data.attributes.username;
+            email.innerText = "E-post: " + book.attributes.users_permissions_user.data.attributes.email;
             genre.innerText = "Genre: " ;
             let cover = document.createElement("img");
             book.attributes.genres.data.forEach((x)=>{
                 genre.innerText +=  x.attributes.genre + " ";
             })
-           profileBooks.append(cover,title,author,pages,review, genre, username, email);
-           
+           listItem.append(cover,title,author,pages,review, genre);
+           profileBooks.append(listItem);
           
   
             if(book.attributes.cover.data) {
@@ -78,13 +83,15 @@ const checkUser = async () => {
             let published = document.createElement("p");
             let username = document.createElement("p");
             let email = document.createElement("p");
+            let listItem = document.createElement("li");
+            title.classList.add("heading");
     
-            title.innerText = "Title: " + audio.attributes.title;
-            minutes.innerText = "Minutes: " + audio.attributes.minutes;
-            review.innerText = "Review: " + audio.attributes.review + "/10";
-            published.innerText = "Publishing date: " + audio.attributes.published;
-            username.innerText = "Username: " + audio.attributes.users_permissions_user.data.attributes.username;
-            email.innerText = "Email: " + audio.attributes.users_permissions_user.data.attributes.email;
+            title.innerText = "Titel: " + audio.attributes.title;
+            minutes.innerText = "Längd i minuter: " + audio.attributes.minutes;
+            review.innerText = "Betyg: " + audio.attributes.review + "/10";
+            published.innerText = "Publicerad: " + audio.attributes.published;
+            username.innerText = "Användarnamn: " + audio.attributes.users_permissions_user.data.attributes.username;
+            email.innerText = "E-post: " + audio.attributes.users_permissions_user.data.attributes.email;
             let genre = document.createElement("p");
             genre.innerText = "Genre: " ;
             let cover = document.createElement("img");
@@ -92,8 +99,8 @@ const checkUser = async () => {
             audio.attributes.genres.data.forEach((x)=>{
                 genre.innerText +=  x.attributes.genre + " ";
             })
-            profileBooks.append(cover,title,minutes, review, published,genre, username, email);
-       
+            listItem.append( cover,title,minutes, review, published,genre);
+            profileAudio.append(listItem);
             if(audio.attributes.cover.data) {
             cover.src = "http://localhost:1337" + audio.attributes.cover.data.attributes.url;
             }
@@ -114,13 +121,7 @@ renderAudio();
 
 checkUser();
 
-let startBtn = document.querySelector("#start");
-
-startBtn.addEventListener("click", ()=>{
-    window.location.href = "./index.html"
-})
-
-let logoutBtn = document.querySelector("#logout-start");
+let logoutBtn = document.querySelector("#logout");
 
 logoutBtn.addEventListener("click", ()=>{
     sessionStorage.clear();

@@ -4,53 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>BookDuck</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <header>
-    <h1>Welcome to BookDuck</h1>
+    <h1>BookDuck</h1>
     <nav  class="logged-in" >
-      <div  >
-      <div><a href="profil.html">Min Profilsida</a>
+      <div >
+      <div>
+        <a href="index.html" class="current">Startsida</a>
+          <a href="profil.html">Min Profilsida</a>
       <a href="addBooks.html">Lägg till böcker</a></div> 
         <div>
            <p class="login-para"></p>
        
       
-       <button id="logout">Log out</button>
+       <button id="logout">Logga ut</button>
     </div>
     </div>
     </nav>
+    <button id="login-btn">Logga in/Registrera </button>
     </header>
    
     <div class="login">
-        <label for="username">Username:</label>
+     
+        <div>
+            <p>Logga in</p>
+          
+        <label for="username">Användarnamn:</label>
     <input type="text" name="username" id="username">
-    <label for="password">Password:</label>
+
+    <label for="password">Lösenord:</label>
     <input type="password" name="password" id="password">
-    <button onclick="login()">Login</button>
-    <p>Register new user</p>
-    <label for="username-new">Username:</label>
+
+    <button onclick="login()">Logga in</button>
+    </div>
+    <div>
+    <p>Registrera en ny användare</p>
+ 
+    <label for="username-new">Användarnamn:</label>
     <input type="text" name="username-new" id="username-new">
-    <label for="email-new">Email:</label>
+
+    <label for="email-new">E-post:</label>
     <input type="email" name="email-new" id="email-new">
-    <label for="password-new">Password:</label>
+
+    <label for="password-new">Lösenord:</label>
     <input type="password" name="password-new" id="password-new">
-    <button onclick="register()">Register & login</button>
+
+    <button onclick="register()">Registrera & logga in</button>
+   </div>
+
     </div>
     <div class="logged-in">
      
     </div>
-    <main>
-        <section id="books">
-            <h2>All Books</h2>
+    <main class="main-main">
+        <section>
+            <h2>Alla Böcker</h2>
+            <ul id="books"></ul>
             
             
         </section>
-        <section id="audio">
-            <h2>All Audio Books</h2>
+        <section>
+            <h2>Alla Ljudböcker</h2>
+            <ul id="audio"></ul>
         </section>
         
     </main>
