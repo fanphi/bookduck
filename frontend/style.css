@@ -220,7 +220,7 @@ nav div button:hover {
   border-radius: 3px;
 }
 
-main {
+.add-main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -231,7 +231,7 @@ main {
   margin: 5px;
 }
 
-main section {
+.add-main section {
   width: 45%;
   border: 2px solid darkseagreen;
   border-radius: 5px;
@@ -250,48 +250,32 @@ main section {
   background-color: rgba(143, 188, 143, 0.189);
 }
 
-main section ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  list-style-type: none;
+.add-main section p {
+  text-align: center;
+  font-weight: bold;
+  color: #476147;
 }
 
-main section ul li {
-  max-width: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 5%;
+.add-main section button {
+  margin-top: 2%;
+  border: none;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background-color: darkseagreen;
+  color: white;
 }
 
-main section h2 {
+.add-main section button:hover {
+  background-color: #476147;
+}
+
+.add-main h2 {
   margin: 10px;
   color: #476147;
 }
 
-main section p {
+.add-main p {
   margin: 3px;
-}
-
-main section img {
-  margin: 5px;
-  height: 200px;
-  border-radius: 3px;
 }
 
 .logged-in {
