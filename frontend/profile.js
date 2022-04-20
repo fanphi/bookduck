@@ -120,6 +120,7 @@ renderAudio();
 }
 
 checkUser();
+
 //funktion för att logga ut och skickas tillbaka till startsidan
 let logoutBtn = document.querySelector("#logout");
 
