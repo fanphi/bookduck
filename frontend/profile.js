@@ -7,7 +7,7 @@ let userContainer = document.querySelector("#user-info");
 let profileBooks = document.querySelector("#profile-books");
 let profileAudio = document.querySelector("#profile-audio");
 
-//Funktio för att kolla vilken användare som är inloggad och skriva ut användarinfo + användarens 
+//Funktion för att kolla vilken användare som är inloggad och skriva ut användarinfo + användarens 
 //böcker och ljudböcker
 const checkUser = async () => {
     let response = await axios.get("http://localhost:1337/api/users/me",
@@ -85,7 +85,6 @@ const checkUser = async () => {
             let email = document.createElement("p");
             let listItem = document.createElement("li");
             title.classList.add("heading");
-    
             title.innerText = "Titel: " + audio.attributes.title;
             minutes.innerText = "Längd i minuter: " + audio.attributes.minutes;
             review.innerText = "Betyg: " + audio.attributes.review + "/10";
@@ -114,11 +113,15 @@ const checkUser = async () => {
 if(data != null){
 loggedIn.style.display = "block";
 }
+
 renderBooks();
 renderAudio();
 
 }
-
+if (data == null){
+    alert("Du måste vara inloggad för att använda denna sida")
+    window.location.href = "./index.html"  
+}
 checkUser();
 
 //funktion för att logga ut och skickas tillbaka till startsidan

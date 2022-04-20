@@ -171,14 +171,15 @@ loginBtn.style.display= "none";
 }
 
 
-loginBtn.addEventListener("click", ()=>{
-if (loginContainer.style.display === "none"){
-    loginContainer.style.display = "flex";
-}
-else{
+
+let loginToggle = ()=>{
+if (loginContainer.style.display === "flex"){
     loginContainer.style.display = "none";
 }
-})
+else{
+    loginContainer.style.display = "flex";
+}
+}
   
 
 

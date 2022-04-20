@@ -20,9 +20,7 @@ header{
 
     }
     nav{
-    //   display: flex;
-    //   flex-direction: row;
-    //   justify-content: space-evenly;
+
     div{
         display: flex;
         flex-direction: row;
@@ -199,11 +197,8 @@ header{
 .login{
     display: none;
     margin: 2%;
-    // display: flex;
     justify-content: space-evenly;
     p{
-        font-size: large;
-        font-weight: bolder;
         margin: 1%;
     }
     div{

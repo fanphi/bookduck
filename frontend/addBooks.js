@@ -119,6 +119,11 @@ let addAudio = async () => {
             }
         }
 
+        if (data == null){
+            alert("Du måste vara inloggad för att använda denna sida")
+            window.location.href = "./index.html"  
+        }
+
         //Loggar ut användaren och skickar tillbaka till startsidan
         let logoutBtn = document.querySelector("#logout");
 
