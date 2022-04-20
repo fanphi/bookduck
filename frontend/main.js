@@ -47,7 +47,7 @@ let renderBooks = async () => {
        
     });
 }
-
+//funktion för att skriva ut alla ljudböcker
 let renderAudio = async () => {
     let response = await axios.get("http://localhost:1337/api/audios?populate=*");
     let audio = response.data.data;
@@ -151,7 +151,7 @@ let loggedInPara = document.querySelector(".login-para");
 
 
 
-const checkMe = async () => {
+const checkUser = async () => {
     let response = await axios.get("http://localhost:1337/api/users/me",
     {
         headers: {
@@ -182,6 +182,6 @@ else{
   
 
 
-checkMe()
+checkUser()
 renderBooks()
 renderAudio()

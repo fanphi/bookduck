@@ -107,6 +107,9 @@ header{
     flex-direction: column;
     margin: 5px;
     align-items: center;
+    #user-info{
+        text-align: center;
+    }
     section{
         width: 60%;
         border: 2px solid darkseagreen;

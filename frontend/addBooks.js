@@ -12,6 +12,8 @@ let audioGenre = document.querySelectorAll(".audioGenre");
 let audioMinutes = document.querySelector("#minutes");
 let audioReview = document.querySelector("#audioReview");
 
+//funktion för att en inloggad användare ska lägga till en bok
+
 let addBook = async () => {
     let user = await axios.get("http://localhost:1337/api/users/me",
     {
@@ -54,6 +56,7 @@ let addBook = async () => {
         )}
         )}
 
+// Funktion för att en inloggad användare ska kunna ladda upp en ljudbok
         
 let addAudio = async () => {
     let user = await axios.get("http://localhost:1337/api/users/me",
@@ -101,7 +104,7 @@ let addAudio = async () => {
         let loggedIn = document.querySelector(".logged-in");
         let loggedInPara = document.querySelector(".login-para");
   
-        
+        //Visar vilken användare som är inloggad
         const checkUser = async () => {
             let response = await axios.get("http://localhost:1337/api/users/me",
             {
@@ -115,6 +118,8 @@ let addAudio = async () => {
             loggedIn.style.display = "block";
             }
         }
+
+        //Loggar ut användaren och skickar tillbaka till startsidan
         let logoutBtn = document.querySelector("#logout");
 
             logoutBtn.addEventListener("click", ()=>{

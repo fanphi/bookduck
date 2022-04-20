@@ -5,10 +5,10 @@ let loggedIn = document.querySelector(".logged-in");
 let loggedInPara = document.querySelector(".login-para");
 let userContainer = document.querySelector("#user-info");
 let profileBooks = document.querySelector("#profile-books");
-// let header = document.createElement("h2");
-// header.innerText = "Mina ljudböcker";
 let profileAudio = document.querySelector("#profile-audio");
 
+//Funktio för att kolla vilken användare som är inloggad och skriva ut användarinfo + användarens 
+//böcker och ljudböcker
 const checkUser = async () => {
     let response = await axios.get("http://localhost:1337/api/users/me",
     {
@@ -120,7 +120,7 @@ renderAudio();
 }
 
 checkUser();
-
+//funktion för att logga ut och skickas tillbaka till startsidan
 let logoutBtn = document.querySelector("#logout");
 
 logoutBtn.addEventListener("click", ()=>{
